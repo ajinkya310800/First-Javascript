@@ -1,1 +1,77 @@
+<html>
 
+<head>
+
+<style>
+
+.main{
+display:flex;
+flex-wrap: wrap;
+gap:20px;
+}
+
+
+.box{
+background-color:skyblue;
+border:1px solid black;
+width:250px;
+text-align:center;
+padding:10px;
+}
+
+.box img{
+width:200px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="main" id="main">
+
+
+</div>
+
+
+<script>
+
+data = [
+{name:"LG Fridge",image:"fridge.jpg",price:20000},
+{name:"Acer",image:"laptop.jpg",price:75000},
+{name:"Camera",image:"camera.jpg",price:60000},
+{name:"Desktop System",image:"desktopsystem.jpg",price:30000},
+{name:"Amazon echo",image:"amazon echo.jpg",price:5499},
+{name:"Home theater",image:"home theater.jpg",price:4000},
+{name:"Headphone",image:"Headphone.jpg",price:10000},
+{name:"Graphics card",image:"graphicscard.jpg",price:75000},
+{name:"Printer",image:"printer.jpg",price:12000},
+{name:"Smart watch",image:"smartwatch.jpg",price:999},
+{name:"Smart TV",image:"smarttv.jpg",price:40000},
+{name:"Power Bank",image:"powerbank.jpg",price:75000}
+]
+
+
+data.forEach((item)=>{
+document.getElementById("main").innerHTML += `<div class="box">
+		<img src="${item.image}"/>
+		<h4>${item.name}</h4>
+		<h3>Rs ${item.price}</h3>
+		<button onclick="buynow('${item.name}')">Buy Now</button>
+	</div>`
+
+});
+
+function buynow(name)
+{
+alert(name);
+}
+
+
+</script>
+
+</body>
+
+</html>
